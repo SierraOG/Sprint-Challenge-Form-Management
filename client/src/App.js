@@ -50,8 +50,9 @@ class App extends React.Component{
   render() {
     return (
       <div className='app'>
-        <h1>Sign Up</h1>
-        <Form />
+        <h1>RSVP</h1>
+        <Form updateUsers={this.getUsers}/>
+        <h2>Food</h2>
         { (this._isMounted) ? <DataList dataArray={this.state.dataArray}/> : null }
         <h2>People</h2>
         <UserList userArray={this.state.userArray} />
