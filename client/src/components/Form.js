@@ -9,14 +9,14 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
     <div className='login'>
     <Form>
         <div style={{width: '47%'}}>
-            {touched.username && errors.username && <p>{errors.username}</p>}
-            <Field name="username" placeholder="User Name" />
+            {touched.username && errors.username && <p data-testid = 'username-error'>{errors.username}</p>}
+            <Field name="username" placeholder="User Name" data-testid='username'/>
         </div>
-        <div>
+        <div data-testid = 'password'>
         {touched.password && errors.password && <p>{errors.password}</p>}
         <Field type="password" name="password" placeholder="Password" />
         </div>
-      <button className="btn btn-primary btn-block btn-large" disabled={isSubmitting}>Submit</button>
+      <button type='submit' data-testid='submitRefButton' className="btn btn-primary btn-block btn-large" disabled={isSubmitting}>Submit</button>
     </Form>
     </div>
   );
